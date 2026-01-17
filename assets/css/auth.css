@@ -1,0 +1,448 @@
+:root {
+    --header-color: #c8ecf1;
+    --icon-color: #ff9800;
+    --footer-color: #f6e99f;
+    --textlogin-color: #4a4a4a;
+    --search-color: #cdd2d5;
+    --glass-color: rgba(255, 255, 255, 0.1);
+    --glass-color2: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Fonts */
+
+@font-face {
+    font-family: 'FontBody';
+    src: url('../font/OPS1.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FontHeading';
+    src: url('../font/OPS2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Joti One';
+    src: url('../font/JotiOne-Regular.ttf') format('truetype');
+}
+
+
+/* Body + Header */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #c6b6f8, #d9ffef);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    padding-top: 85px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    background-color: var(--header-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Joti One', cursive;
+    font-size: 32px;
+    color: #000;
+}
+
+.logo h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    color: #393737;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: aqua;
+}
+
+@media (max-width: 1024px) {
+    .menu ul {
+        gap: 10px;
+        /* giảm khoảng cách giữa các mục */
+    }
+    .menu li a {
+        font-size: 16px;
+        /* giảm kích thước chữ */
+        padding: 5px;
+    }
+    .logo {
+        font-size: 24px;
+        /* nếu logo cũng to quá */
+    }
+    .search-input {
+        font-size: 18px;
+    }
+    .icon-menu a {
+        font-size: 20px;
+        font-size: 20px;
+    }
+}
+
+.icon-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-menu a {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-menu a:hover {
+    color: var(--icon-color);
+}
+
+.dnmobile {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .icon-menu {
+        display: none;
+    }
+    .dnmobile {
+        display: block;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        background-color: var(--glass-color2);
+        position: absolute;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        top: 90px;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        padding: 10px;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-input {
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    background-color: var(--search-color);
+}
+
+.search-button {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--search-color);
+    color: var(--icon-color);
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--icon-color);
+    color: #fff;
+}
+
+
+/* ICON MOBILE CHUYÊN DỤNG */
+
+.search-icon-only {
+    display: none;
+    font-size: 22px;
+    color: var(--icon-color);
+    padding: 5px;
+}
+
+
+/* NHỎ HƠN 426PX */
+
+@media (max-width: 768px) {
+    .search {
+        display: flex;
+        align-items: center;
+    }
+    /* ẨN Ô NHẬP */
+    .search-input {
+        display: none;
+    }
+    /* ẨN NÚT TÌM KIẾM */
+    .search-button {
+        display: none;
+    }
+    /* HIỆN ICON */
+    .search-icon-only {
+        display: block;
+    }
+}
+
+
+/* HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span {
+    font-size: 12px;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button {
+    background-color: #512da8;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container .hidden {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container form input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icon {
+    margin: 20px 0;
+}
+
+.social-icon a {
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.tongle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .tongle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.tongle {
+    background-color: #512da8;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(to right, #5c6bc0, #512da8);
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.active .tongle {
+    transform: translateX(50%);
+}
+
+.tongle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.tongle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .tongle-left {
+    transform: translateX(0);
+}
+
+.tongle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .tongle-right {
+    transform: translateX(200%);
+}

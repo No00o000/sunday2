@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+ 
+body{
+    font-family: 'Joti One', cursive;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    background-color: #69c8ff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar{
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    padding: 10px 0;
+}
+
+.nav-menu{
+    padding: 0;
+    margin: 0;
+}
+.nav-menu li{
+    list-style: none;
+    display: inline;
+    margin: 0 15px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+.logo i{
+    font-size: 175%;
+    color: rgb(253, 139, 63);
+}
+.logo h2{
+    font-size: 250%;
+    font-weight: bold;
+    color: rgb(1, 1, 1);
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.search-input{
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+}
+.search-button{
+    width: 35px;
+    height: 35px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #ff9800;
+    cursor: pointer;
+}
