@@ -34,6 +34,7 @@
                     <li><a href="video.html">Video</a></li>
                     <li><a href="chude.html">Chủ Đề</a></li>
                     <li><a href="thongtin.html">Thông Tin</a></li>
+                    <li><a href="esport.html">Thể Thao Điện Tử</a></li>
                     <li class="dnmobile"><a href="dangnhap.html">Đăng Nhập</a></li>
                 </ul>
             </div>
@@ -97,35 +98,18 @@
         </div>
     </main>
     <script>
-        const slider = document.querySelector('.card-books ul');
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        const items = document.querySelectorAll('.card-books ul li');
-        const itemWidth = 240; // width + gap
-        let currentIndex = 0;
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
 
-        function updateSlider() {
-            const maxIndex = items.length - 1;
-            const offset = currentIndex * itemWidth;
-            slider.style.transform = `translateX(-${offset}px)`;
-        }
+registerBtn.addEventListener('click', () => {
+    container.classList.add('active');
+});
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length; // quay vòng
-            updateSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length; // quay vòng ngược
-            updateSlider();
-        });
-
-        function toggleMenu() {
-            const menu = document.getElementById("mobileMenu");
-            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        }
+loginBtn.addEventListener('click', () => {
+    container.classList.remove('active');
+});
     </script>
-    <script src="assets/js/main.js"></script>
 
 </body>
 
