@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunday.news.com</title>
+    <link rel="stylesheet" href="assets/css/thongtin.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body class="home">
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <h2>Sunday</h2>
+                <i class="fas fa-sun" style="font-size: 32px; color: orange;"></i>
+            </div>
+            <div class="search">
+                <a href="search.html" class="search-icon-only">
+                    <i class="fas fa-search"></i>
+                </a>
+
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="thoisu.html">Đăng Bài</a></li>
+                    <li><a href="thethao.html">Thể Thao</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="chude.html">Chủ Đề</a></li>
+                    <li><a href="thongtin.html">Thông Tin</a></li>
+                    <li><a href="esport.html">Thể Thao Điện Tử</a></li>
+                    <li class="dnmobile"><a href="dangnhap.html">Đăng Nhập</a></li>
+                </ul>
+            </div>
+            <div class="icon-menu">
+                <a href="dangnhap.html"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+        <div class="info-container">
+            <h1>Thông Tin Về Sunday.news.com</h1>
+            <p>Chào mừng bạn đến với Sunday.news.com, nguồn tin tức trực tuyến đáng tin cậy của bạn. Chúng tôi cam kết cung cấp những thông tin mới nhất và chính xác nhất về các sự kiện đang diễn ra trên toàn thế giới.</p>
+            <h2>Sứ Mệnh Của Chúng Tôi</h2>
+            <p>Sứ mệnh của chúng tôi là mang đến cho độc giả những câu chuyện đa chiều, phân tích sâu sắc và góc nhìn toàn diện về các vấn đề quan trọng. Chúng tôi tin rằng thông tin là sức mạnh và chúng tôi muốn trao quyền cho độc giả của mình thông qua việc cung cấp kiến thức và hiểu biết.</p>
+            <h2>Đội Ngũ Của Chúng Tôi</h2>
+            <p>Đội ngũ biên tập và phóng viên của chúng tôi bao gồm những người có kinh nghiệm và đam mê trong lĩnh vực báo chí. Họ làm việc không ngừng nghỉ để đảm bảo rằng mỗi bài viết đều được kiểm tra kỹ lưỡng và phản ánh đúng sự thật.</p>
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <p>Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, xin vui lòng liên hệ với chúng tôi qua email
+    </main>
+  <footer class="vd-footer">
+
+        <div class="vd-footer-grid">
+
+            <div class="vd-footer-left">
+                <h2 class="logo">Sunday</h2>
+                <p>Tạp chí điện tử Tri Thức</p>
+                <p>Cơ quan chủ quản: SMH Studio</p>
+                <p>Giấy phép báo chí số: xxx/GP-BTTTT</p>
+                <p>Tổng biên tập: Nguyễn Đan Huy</p>
+                <br>
+                <div class="vd-footer-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+
+            <div class="vd-footer-right">
+                <p>Hỗ trợ</p>
+                <ul>
+                    <li><a href="#">Trung tâm hỗ trợ</a></li>
+                    <li><a href="#">Nhóm thiết kế</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+        const slider = document.querySelector('.card-books ul');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const items = document.querySelectorAll('.card-books ul li');
+        const itemWidth = 240; // width + gap
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const maxIndex = items.length - 1;
+            const offset = currentIndex * itemWidth;
+            slider.style.transform = `translateX(-${offset}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length; // quay vòng
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length; // quay vòng ngược
+            updateSlider();
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+
+
+    </script>

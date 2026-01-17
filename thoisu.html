@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunday.news.com</title>
+    <link rel="stylesheet" href="assets/css/thoisu.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body class="home">
+        <header>
+        <div class="nav">
+            <div class="logo">
+                <h2>Sunday</h2>
+                <i class="fas fa-sun" style="font-size: 32px; color: orange;"></i>
+            </div>
+            <div class="search">
+                <a href="search.html" class="search-icon-only">
+                    <i class="fas fa-search"></i>
+                </a>
+
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="thoisu.html">Đăng Bài</a></li>
+                    <li><a href="thethao.html">Thể Thao</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="chude.html">Chủ Đề</a></li>
+                    <li><a href="thongtin.html">Thông Tin</a></li>
+                    <li><a href="esport.html">Thể Thao Điện Tử</a></li>
+                    <li class="dnmobile"><a href="dangnhap.html">Đăng Nhập</a></li>
+                </ul>
+            </div>
+            <div class="icon-menu">
+                <a href="dangnhap.html"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-box">
+
+            <div class="p-header">
+                <img src="assets/img/xe3.jpg" class="p-avatar">
+                <div class="p-username">#Người Dùng</div>
+
+                <div class="p-status">
+                    Hiển thị: <span id="privacy-btn">Công khai ▼</span>
+                </div>
+
+                <!-- Menu tùy chọn xuất hiện khi nhấn -->
+                <ul class="privacy-menu" id="privacy-menu">
+                    <li data-value="Công khai">🌍 Công khai</li>
+                    <li data-value="Bạn bè">👥 Bạn bè</li>
+                    <li data-value="Riêng tư">🔒 Chỉ mình tôi</li>
+                </ul>
+
+            </div>
+
+            <div class="p-menu">
+                <div class="p-btn"><i class="far fa-image"></i> Hình ảnh</div>
+                <div class="p-btn"><i class="fas fa-align-left"></i> Câu hỏi</div>
+                <div class="p-btn"><i class="fas fa-video"></i> Video</div>
+            </div>
+
+        </div>
+
+
+        <div class="p-content">
+
+            <div class="p-tabs">
+                <div class="p-tab active">Đã Đăng Tải</div>
+                <div class="p-tab">Đã Lưu Trữ</div>
+            </div>
+
+            <div class="p-line"></div>
+
+            <div class="p-area">
+                <!-- Nội dung hiển thị sau này -->
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="vd-footer">
+
+        <div class="vd-footer-grid">
+
+            <div class="vd-footer-left">
+                <h2 class="logo">Sunday</h2>
+                <p>Tạp chí điện tử Tri Thức</p>
+                <p>Cơ quan chủ quản: SMH Studio</p>
+                <p>Giấy phép báo chí số: xxx/GP-BTTTT</p>
+                <p>Tổng biên tập: Nguyễn Đan Huy</p>
+                <br>
+                <div class="vd-footer-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-tiktok"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+
+            <div class="vd-footer-right">
+                <p>Hỗ trợ</p>
+                <ul>
+                    <li><a href="#">Trung tâm hỗ trợ</a></li>
+                    <li><a href="#">Nhóm thiết kế</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Điều khoản</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        document.querySelectorAll(".p-tab").forEach(tab => {
+            tab.addEventListener("click", () => {
+                document.querySelectorAll(".p-tab").forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+                const area = document.querySelector(".p-area");
+                area.style.animation = "none";
+                void area.offsetWidth;
+                area.style.animation = "fadeIn 0.25s ease forwards";
+            });
+        });
+
+
+
+        const slider = document.querySelector('.card-books ul');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const items = document.querySelectorAll('.card-books ul li');
+        const itemWidth = 240; // width + gap
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const maxIndex = items.length - 1;
+            const offset = currentIndex * itemWidth;
+            slider.style.transform = `translateX(-${offset}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length; // quay vòng
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length; // quay vòng ngược
+            updateSlider();
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+
+
+    </script>
+    <script>
+        const btn = document.getElementById("privacy-btn");
+        const menu = document.getElementById("privacy-menu");
+
+        btn.addEventListener("click", () => {
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                menu.style.display = "none";
+            }
+        });
+
+        document.querySelectorAll(".privacy-menu li").forEach(item => {
+            item.addEventListener("click", () => {
+                btn.textContent = item.dataset.value + " ▼";
+                menu.style.display = "none";
+            });
+        });
+    </script>
+
+</body>

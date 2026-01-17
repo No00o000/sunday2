@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangnhap.news.com</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="js" href="main.js">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <h2>Sunday</h2>
+                <i class="fas fa-sun" style="font-size: 32px; color: orange;"></i>
+            </div>
+            <div class="search">
+                <a href="search.html" class="search-icon-only">
+                    <i class="fas fa-search"></i>
+                </a>
+
+                <input type="text" class="search-input" placeholder="Tìm kiếm...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+            <div class="menu" id="mobileMenu">
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="thoisu.html">Đăng Bài</a></li>
+                    <li><a href="thethao.html">Thể Thao</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="chude.html">Chủ Đề</a></li>
+                    <li><a href="thongtin.html">Thông Tin</a></li>
+                    <li class="dnmobile"><a href="dangnhap.html">Đăng Nhập</a></li>
+                </ul>
+            </div>
+            <div class="icon-menu">
+                <a href="dangnhap.html"><i class="fas fa-user"></i></a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form>
+                    <h1>Tạo tài khoản</h1>
+                    <div class="social-icon">
+                        <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>Sử dụng email của bạn để đăng kí</span>
+                    <input type="text" placeholder="Tên đăng nhập" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Mật khẩu" />
+                    <button>Đăng Ký</button>
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form>
+                    <h1>Đăng nhập</h1>
+                    <div class="social-icon">
+                        <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>Sử dụng email của bạn để đăng nhập</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Mật khẩu" />
+                    <a href="#">Quên mật khẩu?</a>
+                    <button>Đăng Nhập</button>
+                </form>
+            </div>
+            <div class="tongle-container">
+                <div class="tongle">
+                    <div class="tongle-panel tongle-left">
+                        <h1>Chào Mừng Trở Lại!</h1>
+                        <p>Nhập thông tin của bạn</p>
+                        <button class="hidden" id="login">Đăng Nhập</button>
+                    </div>
+                    <div class="tongle-panel tongle-right">
+                        <h1>Chào Mừng Bạn!</h1>
+                        <p>Đăng ký thông tin của bạn</p>
+                        <button class="hidden" id="register">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const slider = document.querySelector('.card-books ul');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const items = document.querySelectorAll('.card-books ul li');
+        const itemWidth = 240; // width + gap
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const maxIndex = items.length - 1;
+            const offset = currentIndex * itemWidth;
+            slider.style.transform = `translateX(-${offset}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length; // quay vòng
+            updateSlider();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length; // quay vòng ngược
+            updateSlider();
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
