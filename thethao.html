@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunday.news.com</title>
     <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/theothao.css">
+    <link rel="stylesheet" href="new.css">
 </head>
 
 <body class="home">
-        <header>
+
+    <!-- HEADER -->
+    <header>
         <div class="nav">
             <div class="logo">
                 <h2>Sunday</h2>
-                <i class="fas fa-sun" style="font-size: 32px; color: orange;"></i>
+                <i class="fas fa-sun sun-icon"></i>
             </div>
-            <div class="search">
+
+            <form class="search">
                 <a href="search.html" class="search-icon-only">
                     <i class="fas fa-search"></i>
                 </a>
-
                 <input type="text" class="search-input" placeholder="Tìm kiếm...">
-                <button class="search-button"><i class="fas fa-search"></i></button>
-            </div>
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
 
-            <div class="menu" id="mobileMenu">
+            <nav class="menu" id="mobileMenu">
                 <ul>
                     <li><a href="index.html">Trang Chủ</a></li>
                     <li><a href="thoisu.html">Đăng Bài</a></li>
@@ -33,147 +37,109 @@
                     <li><a href="video.html">Video</a></li>
                     <li><a href="chude.html">Chủ Đề</a></li>
                     <li><a href="thongtin.html">Thông Tin</a></li>
-                    <li><a href="esport.html">Thể Thao Điện Tử</a></li>
                     <li class="dnmobile"><a href="dangnhap.html">Đăng Nhập</a></li>
                 </ul>
-            </div>
+            </nav>
+
             <div class="icon-menu">
                 <a href="dangnhap.html"><i class="fas fa-user"></i></a>
             </div>
+
             <div class="hamburger" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </div>
-
         </div>
     </header>
 
-    <main class="main">
-        <div class="tinchinh">
-            <div class="post">
-                <h2>Thể Thao</h2>
-                <div class="main_post">
-                    <img src="https://bcp.cdnchinhphu.vn/334894974524682240/2022/3/31/87407b5b44088a56d319-16487016320961862837204.jpg" alt="Thể Thao 1">
-                    <h3>Đội tuyển Việt Nam giành chiến thắng ấn tượng tại vòng loại World Cup</h3>
-                    <p>Trong trận đấu quyết định tại vòng loại World Cup, đội tuyển Việt Nam đã thể hiện phong độ xuất sắc khi giành chiến thắng 3-1 trước đối thủ mạnh. Các cầu thủ đã thi đấu với tinh thần chiến đấu cao, mang lại niềm vui lớn cho người hâm
+   <main class="main">
+
+    <!-- TIN CHÍNH -->
+    <div class="tinchinh">
+        <h2>Thể Thao</h2>
+
+        <div class="main_post">
+            <img src="https://bcp.cdnchinhphu.vn/334894974524682240/2022/3/31/87407b5b44088a56d319-16487016320961862837204.jpg" alt="Thể Thao 1">
+            <h3>Đội tuyển Việt Nam giành chiến thắng ấn tượng tại vòng loại World Cup</h3>
+            <p>Trong trận đấu quyết định tại vòng loại World Cup, đội tuyển Việt Nam đã thể hiện phong độ xuất sắc khi giành chiến thắng 3-1 trước đối thủ mạnh. Các cầu thủ đã thi đấu với tinh thần chiến đấu cao, mang lại niềm vui lớn cho người hâm
                         mộ.
-                    </p>
-                </div>
-                <div class="main_post">
-                    <img src="https://cdn-img.thethao247.vn/resize_1080x716/storage/files/kythanhgaming1/2025/12/17/ff1-6941e101b8be5.jpg" alt="Thể Thao 2">
-                    <h3>Lịch thi đấu Esports Free Fire tại SEA Games 33 mới nhất hôm nay – 17/12</h3>
-                    <p>Bộ môn Free Fire tại SEA Games 33 sẽ chính thức khởi tranh vào ngày hôm nay - 17/12.</p>
-                </div>
-                <div class="main_post">
-                    <img src="https://i1-thethao.vnecdn.net/2025/12/16/image2029678807extractword2out-6231-1472-1765854239.png?w=500&h=300&q=100&dpr=2&fit=crop&s=fMh_84brkeap4Mw4dhFWZw" alt="Thể Thao 3">
-                    <h3>Audition Việt Nam giành loạt huy chương tại SEA Games 33</h3>
-                    <p>Lần đầu dự SEA Games, đội tuyển Audition Việt Nam giành hai huy chương vàng, hai HC bạc, hai HC đồng trong ngày thi đấu 12/12, tại Thái Lan. </p>
-                </div>
-            </div>
         </div>
-        <div class="tinphu">
-            <h3>Tin Được Quan Tâm</h3>
-            <div class="tinnoibat">
-                <div class="tin">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8PPgcUGcm5xrEmLJZm69XuAWjEOtukIRyWg&s" alt="Tin Nổi Bật 1">
-                    <div>
-                        <span class="icon">1</span>
-                        <h4>Top 10 cầu thủ ghi bàn nhiều nhất mọi thời đại[2025]</h4>
-                    </div>
 
-                </div>
-                <div class="tin">
-                    <img src="https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2025/12/12/3e7ee000-cee1-4d1c-9c26-064685c382e9-1765545461866651696641.jpg" alt="Tin Nổi Bật 2">
-                    <div><span class="icon">2</span>
-                        <h4>Lịch thi đấu bán kết bóng đá nam SEA Games 33</h4>
-                    </div>
+        <div class="main_post">
+            <img src="https://cdn-img.thethao247.vn/resize_1080x716/storage/files/kythanhgaming1/2025/12/17/ff1-6941e101b8be5.jpg" alt="Thể Thao 2">
+            <h3>Lịch thi đấu Esports Free Fire tại SEA Games 33 mới nhất hôm nay – 17/12</h3>
+            <p>Bộ môn Free Fire tại SEA Games 33 sẽ chính thức khởi tranh vào ngày hôm nay - 17/12.</p>
+        </div>
 
-                </div>
-                <div class="tin">
-                    <img src="https://thethaovanhoa.mediacdn.vn/thumb_w/1000/372676912336973824/2025/12/16/screenshot-2025-12-17-063012-1765927857468961245061.jpg" alt="Tin Nổi Bật 3">
-                    <div>
-                        <span class="icon">3</span>
-                        <h4>
-                            Truyền thông Thái Lan kết luận về pha ghi điểm gây tranh cãi ở chung kết SEA Games 2025
-                        </h4>
-                    </div>
+        <div class="main_post">
+            <img src="https://i1-thethao.vnecdn.net/2025/12/16/image2029678807extractword2out-6231-1472-1765854239.png?w=500&h=300&q=100&dpr=2&fit=crop&s=fMh_84brkeap4Mw4dhFWZw" alt="Thể Thao 3">
+            <h3>Audition Việt Nam giành loạt huy chương tại SEA Games 33</h3>
+            <p>Lần đầu dự SEA Games, đội tuyển Audition Việt Nam giành hai huy chương vàng, hai HC bạc, hai HC đồng trong ngày thi đấu 12/12, tại Thái Lan. </p>
+        </div>
+    </div>
 
-                </div>
-                <div class="tin">
-                    <img src="https://img.baobacninhtv.vn/Medias/6281/2025/12/14/6.jpg" alt="Tin Nổi Bật 4">
-                    <div>
-                        <span class="icon">4</span>
-                        <h4> Huấn luyện viên Kim Sang-sik: U22 Việt Nam quyết tâm giành chiến thắng trong trận bán kết
-                        </h4>
-                    </div>
-                </div>
+    <div class="tinphu">
+    <h3>Tin Được Quan Tâm</h3>
+
+    <div class="tin-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8PPgcUGcm5xrEmLJZm69XuAWjEOtukIRyWg&s" alt="Tin Nổi Bật 1">
+        <div class="tin-content">
+            <span class="badge">1</span>
+            <h4>Top 10 cầu thủ ghi bàn nhiều nhất mọi thời đại [2025]</h4>
+        </div>
+    </div>
+
+    <div class="tin-card">
+       <img src="https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2025/12/12/3e7ee000-cee1-4d1c-9c26-064685c382e9-1765545461866651696641.jpg" alt="Tin Nổi Bật 2">
+        <div class="tin-content">
+            <span class="badge">2</span>
+            <h4>Lịch thi đấu bán kết bóng đá nam SEA Games 33</h4>
+        </div>
+    </div>
+
+    <div class="tin-card">
+        <img src="https://thethaovanhoa.mediacdn.vn/thumb_w/1000/372676912336973824/2025/12/16/screenshot-2025-12-17-063012-1765927857468961245061.jpg" alt="Tin Nổi Bật 3">
+        <div class="tin-content">
+            <span class="badge">3</span>
+            <h4>Pha ghi bàn gây tranh cãi tại trận chung kết</h4>
+        </div>
+    </div>
+</div>
+
+</main>
 
 
-
-            </div>
-    </main>
-
-
-
+    <!-- FOOTER -->
     <footer class="vd-footer">
-
         <div class="vd-footer-grid">
-
             <div class="vd-footer-left">
-                <h2 class="logo">Sunday</h2>
+                <h2>Sunday</h2>
                 <p>Tạp chí điện tử Tri Thức</p>
                 <p>Cơ quan chủ quản: SMH Studio</p>
-                <p>Giấy phép báo chí số: xxx/GP-BTTTT</p>
-                <p>Tổng biên tập: Ngô Tiến Dũng</p>
-                <br>
                 <div class="vd-footer-icons">
                     <i class="fab fa-facebook-f"></i>
                     <i class="fab fa-tiktok"></i>
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-youtube"></i>
-                    <i class="fab fa-linkedin"></i>
                 </div>
             </div>
 
             <div class="vd-footer-right">
                 <p>Hỗ trợ</p>
                 <ul>
-                    <li><a href="#">Trung tâm hỗ trợ</a></li>
-                    <li><a href="#">Nhóm thiết kế</a></li>
                     <li><a href="#">Chính sách bảo mật</a></li>
                     <li><a href="#">Điều khoản</a></li>
                 </ul>
             </div>
-
         </div>
-
     </footer>
 
     <script>
-        const slider = document.querySelector('.card-books ul');
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        const items = document.querySelectorAll('.card-books ul li');
-        const itemWidth = 240; // width + gap
-        let currentIndex = 0;
-
-        function updateSlider() {
-            const maxIndex = items.length - 1;
-            const offset = currentIndex * itemWidth;
-            slider.style.transform = `translateX(-${offset}px)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length; // quay vòng
-            updateSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length; // quay vòng ngược
-            updateSlider();
-        });
-
         function toggleMenu() {
             const menu = document.getElementById("mobileMenu");
-            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
         }
     </script>
+
+</body>
+
+</html>
